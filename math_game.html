@@ -57,6 +57,7 @@
             padding: 15px;
             width: 200px;
             color: #333;
+            z-index: 10; /* Ensure it stays above other content */
         }
 
         .result {
@@ -68,7 +69,6 @@
             display: block;
             margin: 5px 0;
             padding: 5px;
-            border-radius: 5px;
         }
 
         .score {
@@ -99,6 +99,11 @@
                 font-size: 0.9em;
             }
         }
+
+        /* Ensure body has padding to prevent overlap */
+        .game-container {
+            margin-top: 100px; /* Add margin to prevent overlap with fixed scoreboard */
+        }
     </style>
 </head>
 <body>
@@ -109,11 +114,13 @@
         <span class="correct">Correct Answers: <span id="correctCount">0</span></span>
         <span class="wrong">Wrong Answers: <span id="wrongCount">0</span></span>
     </div>
-    <div class="question" id="question"></div>
-    <input type="number" id="answer" placeholder="Your answer" />
-    <button onclick="checkAnswer()">Submit</button>
-    <div class="result" id="result"></div>
-    <button id="nextButton" onclick="nextQuestion()" style="display: none;">Next Question</button>
+    <div class="game-container">
+        <div class="question" id="question"></div>
+        <input type="number" id="answer" placeholder="Your answer" />
+        <button onclick="checkAnswer()">Submit</button>
+        <div class="result" id="result"></div>
+        <button id="nextButton" onclick="nextQuestion()" style="display: none;">Next Question</button>
+    </div>
 
     <script>
         let correctAnswer;
