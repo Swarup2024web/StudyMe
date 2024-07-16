@@ -55,11 +55,14 @@
 
     <script>
         let correctAnswer;
-        
+        let score = 0;
+        let questionCount = 0;
+        const totalQuestions = 10;
+
         function generateQuestion() {
             const num1 = Math.floor(Math.random() * 10) + 1;
             const num2 = Math.floor(Math.random() * 10) + 1;
-            correctAnswer = num1 + num2; // Simple addition
+            correctAnswer = num1 + num2;
             document.getElementById('question').innerText = `What is ${num1} + ${num2}?`;
             document.getElementById('answer').value = '';
             document.getElementById('result').innerText = '';
@@ -70,10 +73,25 @@
             const resultDisplay = document.getElementById('result');
             
             if (userAnswer === correctAnswer) {
+                score += 2;
                 resultDisplay.innerText = 'Correct! 🎉';
             } else {
                 resultDisplay.innerText = `Incorrect! The correct answer was ${correctAnswer}.`;
             }
+            questionCount++;
+
+            if (questionCount < totalQuestions) {
+                generateQuestion();
+            } else {
+                showScore();
+            }
+        }
+
+        function showScore() {
+            alert(`Game Over! Your score is: ${score} out of ${totalQuestions * 2}`);
+            // Reset for a new game
+            score = 0;
+            questionCount = 0;
             generateQuestion();
         }
 
