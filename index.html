@@ -3,78 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Swarup Sir</title>
+    <link rel="icon" href="icon.png"> <!-- Replace with your icon path -->
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f2f2f2;
+            background-color: rgba(255, 255, 255, 0.9);
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            position: sticky;
+            top: 0;
+            padding: 15px;
             text-align: center;
         }
 
-        .search-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        input[type="text"] {
-            width: 100%;
-            max-width: 400px;
-            height: 50px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 25px;
-            font-size: 16px;
-            outline: none;
-            box-sizing: border-box; /* Ensure padding doesn't affect total width */
-        }
-
-        button {
-            height: 50px;
-            padding: 0 20px;
-            margin-left: 10px;
-            border: none;
-            border-radius: 25px;
-            background-color: #4285f4;
+        nav a {
+            margin: 0 15px;
             color: white;
-            font-size: 16px;
-            cursor: pointer;
+            text-decoration: none;
         }
 
-        button:hover {
-            background-color: #357ae8;
+        main {
+            padding: 20px;
         }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
-            }
+        .card {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-            input[type="text"], button {
-                width: 90%; /* Adjusts input and button width on smaller screens */
-                margin-left: 0; /* Remove left margin for button */
-            }
+        .notes { background-color: #3498db; }
+        .gk { background-color: #2ecc71; }
+        .videos { background-color: #e74c3c; }
+        .magazine { background-color: #9b59b6; }
+        .childcare { background-color: #f1c40f; }
+        .spoken-english { background-color: #e67e22; }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <h1>Swarup Sir</h1>
-    <div class="search-container">
-        <input type="text" placeholder="Search...">
-        <button>Search</button>
-    </div>
+    <header>
+        <h1>Swarup Sir</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card notes">
+            <h2>Notes</h2>
+            <p>Short description of notes.</p>
+        </section>
+        
+        <section class="card gk">
+            <h2>GK and Current Affairs</h2>
+            <p>Short description of GK and current affairs.</p>
+        </section>
+
+        <section class="card videos">
+            <h2>Videos</h2>
+            <p>Short description of videos.</p>
+        </section>
+
+        <section class="card magazine">
+            <h2>Magazine of the Month</h2>
+            <p>Short description of the magazine.</p>
+        </section>
+
+        <section class="card childcare">
+            <h2>Child Care Tips</h2>
+            <p>Short description of child care tips.</p>
+        </section>
+
+        <section class="card spoken-english">
+            <h2>Spoken English</h2>
+            <p>Short description of spoken English.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Swarup Sir</p>
+    </footer>
 </body>
 </html>
