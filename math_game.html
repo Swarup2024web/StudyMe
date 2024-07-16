@@ -40,45 +40,60 @@
             background-color: #2980b9;
         }
 
-        .result {
-            margin-top: 20px;
-            font-size: 20px;
+        .info {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: left;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
     <h1>Math Game</h1>
+    <div class="info" id="info">
+        Score: <span id="score">0</span><br>
+        Questions Left: <span id="questionsLeft">10</span><br>
+        Correct Answers: <span id="correctCount">0</span><br>
+        Wrong Answers: <span id="wrongCount">0</span><br>
+    </div>
     <div class="question" id="question"></div>
     <input type="number" id="answer" placeholder="Your answer" />
     <button onclick="checkAnswer()">Submit</button>
-    <div class="result" id="result"></div>
 
     <script>
         let correctAnswer;
         let score = 0;
         let questionCount = 0;
+        let correctAnswers = 0;
+        let wrongAnswers = 0;
         const totalQuestions = 10;
 
         function generateQuestion() {
             const num1 = Math.floor(Math.random() * 10) + 1;
             const num2 = Math.floor(Math.random() * 10) + 1;
             correctAnswer = num1 + num2;
-            document.getElementById('question').innerText = `What is ${num1} + ${num2}?`;
+            questionCount++;
+            document.getElementById('question').innerText = `Question ${questionCount}: What is ${num1} + ${num2}?`;
             document.getElementById('answer').value = '';
-            document.getElementById('result').innerText = '';
+            updateInfo();
         }
 
         function checkAnswer() {
             const userAnswer = parseInt(document.getElementById('answer').value);
-            const resultDisplay = document.getElementById('result');
-            
             if (userAnswer === correctAnswer) {
                 score += 2;
-                resultDisplay.innerText = 'Correct! 🎉';
+                correctAnswers++;
+                document.getElementById('info').innerText = `Correct! 🎉`;
             } else {
-                resultDisplay.innerText = `Incorrect! The correct answer was ${correctAnswer}.`;
+                wrongAnswers++;
+                document.getElementById('info').innerText = `Incorrect! The correct answer was ${correctAnswer}.`;
             }
-            questionCount++;
+            updateInfo();
 
             if (questionCount < totalQuestions) {
                 generateQuestion();
@@ -87,11 +102,20 @@
             }
         }
 
+        function updateInfo() {
+            document.getElementById('score').innerText = score;
+            document.getElementById('questionsLeft').innerText = totalQuestions - questionCount;
+            document.getElementById('correctCount').innerText = correctAnswers;
+            document.getElementById('wrongCount').innerText = wrongAnswers;
+        }
+
         function showScore() {
             alert(`Game Over! Your score is: ${score} out of ${totalQuestions * 2}`);
             // Reset for a new game
             score = 0;
             questionCount = 0;
+            correctAnswers = 0;
+            wrongAnswers = 0;
             generateQuestion();
         }
 
