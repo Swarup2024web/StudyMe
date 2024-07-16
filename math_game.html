@@ -12,6 +12,20 @@
             padding: 20px;
         }
 
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+        }
+
         h1 {
             color: #333;
             font-size: 2em;
@@ -61,30 +75,6 @@
             margin: 10px 0;
         }
 
-        .info span {
-            display: block;
-            margin: 5px 0;
-            padding: 5px;
-        }
-
-        .score {
-            background-color: #e0f7fa; /* Light cyan */
-        }
-        .questions-left {
-            background-color: #ffe0b2; /* Light orange */
-        }
-        .correct {
-            background-color: #c8e6c9; /* Light green */
-        }
-        .wrong {
-            background-color: #ffcdd2; /* Light red */
-        }
-
-        .play-again, .home-button {
-            display: none; /* Initially hidden */
-        }
-
-        /* Popup styles */
         .popup {
             display: none;
             position: fixed;
@@ -103,10 +93,6 @@
         }
 
         @media (max-width: 600px) {
-            .info {
-                width: 90%;
-                right: 5%;
-            }
             h1 {
                 font-size: 1.5em;
             }
@@ -120,7 +106,13 @@
     </style>
 </head>
 <body>
-    <h1>Math Game</h1>
+    <header>
+        <h1>Math Game</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
     <div class="game-container">
         <div class="question" id="question"></div>
         <input type="number" id="answer" placeholder="Your answer" />
@@ -140,8 +132,7 @@
         <button onclick="playAgain()">Ok</button>
     </div>
     
-    <button class="play-again" id="playAgainButton" onclick="restartGame()">Play Again</button>
-    <button class="home-button" id="homeButton" onclick="goHome()">Go to Home</button>
+    <button class="play-again" id="playAgainButton" onclick="restartGame()" style="display: none;">Play Again</button>
 
     <script>
         let correctAnswer;
@@ -204,7 +195,6 @@
         function playAgain() {
             document.getElementById('popup').style.display = 'none';
             document.getElementById('playAgainButton').style.display = 'block';
-            document.getElementById('homeButton').style.display = 'block';
         }
 
         function restartGame() {
@@ -213,12 +203,7 @@
             correctAnswers = 0;
             wrongAnswers = 0;
             document.getElementById('playAgainButton').style.display = 'none';
-            document.getElementById('homeButton').style.display = 'none';
             generateQuestion();
-        }
-
-        function goHome() {
-            window.location.href = 'index.html';
         }
 
         // Generate the first question on load
