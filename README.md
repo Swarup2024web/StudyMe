@@ -10,7 +10,7 @@ Welcome to my personal website! This project is hosted on GitHub Pages and showc
 
 ## About Me
 
-This section provides a brief introduction about myself. You can share your background, interests, and anything else you want visitors to know.
+I'm interested in learning about web development and technology. I'm excited to explore new skills and connect with others in the community.
 
 ## Projects
 
@@ -22,7 +22,7 @@ If you would like to get in touch, please reach out via email at [example@exampl
 
 ## Getting Started
 
-To view the website, visit: [https://username.github.io](https://username.github.io) (replace `username` with your GitHub username).
+To view the website, visit: [https://swarup2024web.github.io](https://swarup2024web.github.io) (replace `username` with your GitHub username).
 
 ### Technologies Used
 
