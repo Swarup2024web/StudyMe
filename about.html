@@ -76,11 +76,19 @@
 
         .profile-icon {
             font-size: 100px;
-            color: #FF5733; /* Base color */
+            color: #FF5733;
             background: linear-gradient(45deg, #FF5733, #FFC300, #DAF7A6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-icon span {
+            margin-left: 10px;
+            font-size: 1.5rem;
         }
 
         .hobbies {
@@ -111,6 +119,18 @@
                 margin-left: 0;
                 width: 100%;
             }
+            .profile-icon {
+                font-size: 80px; /* Smaller icon on mobile */
+            }
+            .profile-icon span {
+                font-size: 1.2rem; /* Smaller text on mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2rem; /* Smaller header on mobile */
+            }
         }
     </style>
 </head>
@@ -129,9 +149,10 @@
 
     <main>
         <div class="profile-icon">
-            <i class="fas fa-user"></i> <!-- Font Awesome icon -->
+            <i class="fas fa-user"></i>
+            <span>Your Friend</span>
         </div>
-        <h2>About Me</h2>
+        
         <p>I am an aspiring web developer eager to learn more about technology and coding. My goal is to create innovative projects and connect with the tech community.</p>
         <p>In my spare time, I enjoy reading about new technologies, participating in coding challenges, and enhancing my skills.</p>
 
