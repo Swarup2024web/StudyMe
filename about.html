@@ -23,14 +23,20 @@
         }
 
         header {
-            background: #4a90e2;
+            background: #007acc; /* Changed color */
             color: #fff;
-            padding: 15px;
+            padding: 10px; /* Reduced padding */
             text-align: center;
             width: 100%;
-            position: fixed;
+            transition: top 0.3s; /* Smooth transition */
+            position: fixed; /* Keep it at the top initially */
             top: 0;
             z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 1.5rem; /* Smaller font size */
+            margin: 0;
         }
 
         nav {
@@ -70,7 +76,7 @@
         footer {
             text-align: center;
             padding: 15px;
-            background: #4a90e2;
+            background: #007acc; /* Changed color */
             color: #fff;
             border-radius: 10px;
             margin-top: 20px;
@@ -95,8 +101,8 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1 style="margin: 0;">My Website</h1>
+    <header id="header">
+        <h1>My Website</h1>
     </header>
 
     <nav>
@@ -116,5 +122,21 @@
     <footer>
         <p>&copy; 2024 My Website</p>
     </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                header.style.top = "-60px"; // Adjust height to hide
+            } else {
+                header.style.top = "0"; // Show header
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
 </body>
 </html>
