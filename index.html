@@ -73,18 +73,16 @@
             flex: 1;
         }
 
-        .class-section {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #e0f7fa; /* Light cyan */
+            transition: transform 0.2s;
         }
 
-        .class-item {
-            border: 1px solid #007acc;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            background: #f0f8ff;
+        .section:hover {
+            transform: scale(1.02);
         }
 
         .icon {
@@ -116,9 +114,6 @@
                 margin-left: 0;
                 width: 100%;
             }
-            .class-section {
-                grid-template-columns: 1fr; /* Stack on smaller screens */
-            }
         }
     </style>
 </head>
@@ -136,33 +131,27 @@
     </nav>
 
     <main>
-        <h2>Select Your Class</h2>
-        <div class="class-section">
-            <div class="class-item">
-                <h3>Class 5</h3>
-                <div class="icon">📹</div>
-                <p>Videos</p>
-            </div>
-            <div class="class-item">
-                <h3>Class 6</h3>
-                <div class="icon">📝</div>
-                <p>Notes</p>
-            </div>
-            <div class="class-item">
-                <h3>Class 7</h3>
-                <div class="icon">📚</div>
-                <p>GK & Current Affairs</p>
-            </div>
-            <div class="class-item">
-                <h3>Class 8</h3>
-                <div class="icon">📖</div>
-                <p>Videos</p>
-            </div>
-            <div class="class-item">
-                <h3>Class 9</h3>
-                <div class="icon">🗒️</div>
-                <p>Notes</p>
-            </div>
+        <h2>Select Your Resources</h2>
+
+        <div class="section">
+            <div class="icon">📹</div>
+            <h3>Videos</h3>
+            <p>Explore our video tutorials on various topics to enhance your learning experience.</p>
+            <a href="videos.html">View Videos</a>
+        </div>
+
+        <div class="section">
+            <div class="icon">📝</div>
+            <h3>Notes</h3>
+            <p>Access detailed notes for each subject, tailored to support your studies.</p>
+            <a href="notes.html">View Notes</a>
+        </div>
+
+        <div class="section">
+            <div class="icon">📚</div>
+            <h3>GK & Current Affairs</h3>
+            <p>Stay updated with the latest general knowledge and current events.</p>
+            <a href="gk_current_affairs.html">View GK & Current Affairs</a>
         </div>
     </main>
 
