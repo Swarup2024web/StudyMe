@@ -28,8 +28,10 @@
             padding: 10px;
             text-align: center;
             width: 100%;
-            position: relative;
+            position: fixed;
+            top: 0;
             z-index: 1000;
+            transition: top 0.3s;
         }
 
         .title h1 {
@@ -43,7 +45,7 @@
             width: 100%;
             padding: 10px 0;
             position: fixed;
-            top: 0;
+            top: 40px; /* Adjust this value to be below the title */
             z-index: 1001;
             display: flex;
             justify-content: center;
@@ -54,10 +56,6 @@
             display: flex;
             gap: 20px;
             margin: 0;
-        }
-
-        nav ul li {
-            padding: 10px;
         }
 
         nav ul li a {
@@ -160,7 +158,7 @@
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
             if (scrollTop > lastScrollTop) {
-                title.style.top = "-60px";
+                title.style.top = "-60px"; // Adjust based on title height
             } else {
                 title.style.top = "0";
             }
