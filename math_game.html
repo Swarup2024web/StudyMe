@@ -3,137 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swarup Sir</title>
-    <link rel="icon" href="icon.png"> <!-- Replace with your icon path -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Math Game</title>
     <style>
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-
-        header {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            position: sticky;
-            top: 0;
-            padding: 15px;
+            background-color: #f4f4f4;
             text-align: center;
-        }
-
-        nav a {
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-        }
-
-        main {
             padding: 20px;
         }
 
-        .card {
-            display: flex;
-            align-items: center;
+        h1 {
+            color: #333;
+            font-size: 2em;
+        }
+
+        .question {
+            font-size: 1.5em;
             margin: 20px 0;
-            padding: 20px;
-            border-radius: 10px;
-            color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .card i {
-            font-size: 36px; /* Increased icon size */
-            margin-right: 15px;
-            color: white; /* Default icon color */
-        }
-
-        .card div {
-            flex-grow: 1; /* Allows the text to fill the remaining space */
-        }
-
-        .notes { background-color: #8e44ad; } /* Purple */
-        .gk { background-color: #e67e22; } /* Orange */
-        .videos { background-color: #3498db; } /* Blue */
-        .magazine { background-color: #1abc9c; } /* Teal */
-        .childcare { background-color: #f39c12; } /* Yellow-Orange */
-        .spoken-english { background-color: #c0392b; } /* Red */
-        .math-game { background-color: #2ecc71; } /* Green */
-
-        footer {
-            text-align: center;
+        input[type="number"] {
             padding: 10px;
-            background-color: rgba(0, 0, 0, 0.8);
+            font-size: 1em;
+            margin-top: 10px;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 1em;
+            background-color: #3498db;
             color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .info {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            width: 90%;
+            max-width: 400px;
+            margin: 20px auto;
+            color: #333;
+        }
+
+        .result {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .info span {
+            display: block;
+            margin: 5px 0;
+            padding: 5px;
+        }
+
+        .score {
+            background-color: #e0f7fa; /* Light cyan */
+        }
+        .questions-left {
+            background-color: #ffe0b2; /* Light orange */
+        }
+        .correct {
+            background-color: #c8e6c9; /* Light green */
+        }
+        .wrong {
+            background-color: #ffcdd2; /* Light red */
+        }
+
+        .play-again, .home-button {
+            display: none; /* Initially hidden */
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            z-index: 100;
+        }
+
+        .popup button {
+            background-color: #2ecc71; /* Green */
+        }
+
+        @media (max-width: 600px) {
+            .info {
+                width: 90%;
+                right: 5%;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            .question {
+                font-size: 1.2em;
+            }
+            button {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Swarup Sir</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="math_game.html" class="math-game">Math Game</a>
-        </nav>
-    </header>
+    <h1>Math Game</h1>
+    <div class="game-container">
+        <div class="question" id="question"></div>
+        <input type="number" id="answer" placeholder="Your answer" />
+        <button onclick="checkAnswer()">Submit</button>
+        <div class="result" id="result"></div>
+        <button id="nextButton" onclick="nextQuestion()" style="display: none;">Next Question</button>
+    </div>
+    <div class="info" id="info">
+        <span class="score">Score: <span id="score">0</span></span>
+        <span class="questions-left">Questions Left: <span id="questionsLeft">10</span></span>
+        <span class="correct">Correct Answers: <span id="correctCount">0</span></span>
+        <span class="wrong">Wrong Answers: <span id="wrongCount">0</span></span>
+    </div>
 
-    <main>
-        <section class="card notes">
-            <i class="fas fa-book"></i>
-            <div>
-                <h2 style="font-size: 1.8rem;">Notes</h2>
-                <p style="font-size: 1.1rem;">Comprehensive study notes covering key concepts and topics for easier learning.</p>
-            </div>
-        </section>
-        
-        <section class="card gk">
-            <i class="fas fa-newspaper"></i>
-            <div>
-                <h2 style="font-size: 1.8rem;">GK and Current Affairs</h2>
-                <p style="font-size: 1.1rem;">Stay updated with the latest general knowledge and current events to enhance your awareness.</p>
-            </div>
-        </section>
+    <div class="popup" id="popup">
+        <p>Thank you for playing the game. Play again to speed yourself up. - Swarup Sir</p>
+        <button onclick="playAgain()">Ok</button>
+    </div>
+    
+    <button class="play-again" id="playAgainButton" onclick="restartGame()">Play Again</button>
+    <button class="home-button" id="homeButton" onclick="goHome()">Go to Home</button>
 
-        <section class="card videos">
-            <i class="fas fa-video"></i>
-            <div>
-                <h2 style="font-size: 1.8rem;">Videos</h2>
-                <p style="font-size: 1.1rem;">Engaging video content that helps visualize and understand complex subjects effectively.</p>
-            </div>
-        </section>
+    <script>
+        let correctAnswer;
+        let score = 0;
+        let questionCount = 0;
+        let correctAnswers = 0;
+        let wrongAnswers = 0;
+        const totalQuestions = 10;
 
-        <section class="card magazine">
-            <i class="fas fa-book-open"></i>
-            <div>
-                <h2 style="font-size: 1.8rem;">Magazine of the Month</h2>
-                <p style="font-size: 1.1rem;">Discover interesting articles and insights in the monthly magazine to expand your knowledge.</p>
-            </div>
-        </section>
+        function generateQuestion() {
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            correctAnswer = num1 + num2;
+            questionCount++;
+            document.getElementById('question').innerText = `Question ${questionCount}: What is ${num1} + ${num2}?`;
+            document.getElementById('answer').value = '';
+            document.getElementById('result').innerText = '';
+            updateInfo();
+            document.getElementById('nextButton').style.display = 'none';
+        }
 
-        <section class="card childcare">
-            <i class="fas fa-baby"></i>
-            <div>
-                <h2 style="font-size: 1.8rem;">Child Care Tips</h2>
-                <p style="font-size: 1.1rem;">Practical advice for parents on caring for children, promoting healthy development and well-being.</p>
-            </div>
-        </section>
+        function checkAnswer() {
+            const userAnswer = parseInt(document.getElementById('answer').value);
+            const resultDisplay = document.getElementById('result');
+            
+            if (userAnswer === correctAnswer) {
+                score += 2;
+                correctAnswers++;
+                resultDisplay.innerText = 'Correct! 🎉';
+            } else {
+                wrongAnswers++;
+                resultDisplay.innerText = `Incorrect! The correct answer was ${correctAnswer}.`;
+            }
+            updateInfo();
+            if (questionCount < totalQuestions) {
+                document.getElementById('nextButton').style.display = 'block';
+            } else {
+                showPopup();
+            }
+        }
 
-        <section class="card spoken-english">
-            <i class="fas fa-comments"></i>
-            <div>
-                <h2 style="font-size: 1.8rem;">Spoken English</h2>
-                <p style="font-size: 1.1rem;">Improve your spoken English skills with helpful tips, practice exercises, and conversational guides.</p>
-            </div>
-        </section>
-    </main>
+        function nextQuestion() {
+            if (questionCount < totalQuestions) {
+                generateQuestion();
+            }
+        }
 
-    <footer>
-        <p>&copy; 2024 Swarup Sir</p>
-    </footer>
+        function updateInfo() {
+            document.getElementById('score').innerText = score;
+            document.getElementById('questionsLeft').innerText = totalQuestions - questionCount;
+            document.getElementById('correctCount').innerText = correctAnswers;
+            document.getElementById('wrongCount').innerText = wrongAnswers;
+        }
+
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('nextButton').style.display = 'none'; // Hide the next button
+        }
+
+        function playAgain() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('playAgainButton').style.display = 'block';
+            document.getElementById('homeButton').style.display = 'block';
+        }
+
+        function restartGame() {
+            score = 0;
+            questionCount = 0;
+            correctAnswers = 0;
+            wrongAnswers = 0;
+            document.getElementById('playAgainButton').style.display = 'none';
+            document.getElementById('homeButton').style.display = 'none';
+            generateQuestion();
+        }
+
+        function goHome() {
+            window.location.href = 'index.html';
+        }
+
+        // Generate the first question on load
+        window.onload = generateQuestion;
+    </script>
 </body>
 </html>
