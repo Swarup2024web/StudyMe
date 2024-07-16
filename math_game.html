@@ -9,27 +9,30 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             text-align: center;
-            padding: 50px;
+            padding: 20px;
         }
 
         h1 {
             color: #333;
+            font-size: 2em;
         }
 
         .question {
-            font-size: 24px;
+            font-size: 1.5em;
             margin: 20px 0;
         }
 
         input[type="number"] {
             padding: 10px;
-            font-size: 16px;
+            font-size: 1em;
             margin-top: 10px;
+            width: 80%;
+            max-width: 300px;
         }
 
         button {
             padding: 10px 15px;
-            font-size: 16px;
+            font-size: 1em;
             background-color: #3498db;
             color: white;
             border: none;
@@ -47,7 +50,7 @@
             top: 20px;
             right: 20px;
             text-align: left;
-            font-size: 16px;
+            font-size: 1em;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -57,7 +60,7 @@
         }
 
         .result {
-            font-size: 20px;
+            font-size: 1.2em;
             margin: 10px 0;
         }
 
@@ -79,6 +82,22 @@
         }
         .wrong {
             background-color: #ffcdd2; /* Light red */
+        }
+
+        @media (max-width: 600px) {
+            .info {
+                width: 90%;
+                right: 5%;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            .question {
+                font-size: 1.2em;
+            }
+            button {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
