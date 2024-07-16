@@ -184,11 +184,12 @@
             const place = document.getElementById('place').value;
 
             const message = `Question: ${question}\nClass: ${selectedClass}\nStudent Name: ${studentName}\nPlace: ${place}`;
-            const whatsappURL = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            const whatsappNumber = "6294390641";
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
             window.open(whatsappURL, '_blank');
         }
-        
+
         let lastScrollTop = 0;
         const header = document.getElementById("header");
 
