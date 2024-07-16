@@ -22,7 +22,7 @@ If you would like to get in touch, please reach out via email at [example@exampl
 
 ## Getting Started
 
-To view the website, visit: [https://swarup2024web.github.io](https://swarup2024web.github.io) (replace `username` with your GitHub username).
+To view the website, visit: [https://Swarup2024web.github.io](https://Swarup2024web.github.io) (replace `username` with your GitHub username).
 
 ### Technologies Used
 
