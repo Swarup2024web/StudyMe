@@ -28,10 +28,10 @@
             padding: 10px;
             text-align: center;
             width: 100%;
-            position: fixed;
-            top: 0;
             z-index: 1000;
             transition: top 0.3s;
+            position: sticky; /* Make the title sticky */
+            top: 0; /* Stick to the top */
         }
 
         .title h1 {
@@ -45,7 +45,7 @@
             width: 100%;
             padding: 10px 0;
             position: fixed;
-            top: 50px; /* Adjusted to be below the title */
+            top: 40px; /* Positioned below the title */
             z-index: 1001;
             display: flex;
             justify-content: center;
