@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Basic Reset */
         * {
@@ -74,15 +75,11 @@
         }
 
         .profile-icon {
-            width: 100px;
-            height: 100px;
-            background-color: #007acc;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
+            font-size: 100px;
+            color: #FF5733; /* Base color */
+            background: linear-gradient(45deg, #FF5733, #FFC300, #DAF7A6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin: 20px auto;
         }
 
@@ -131,7 +128,9 @@
     </nav>
 
     <main>
-        <div class="profile-icon">👤</div>
+        <div class="profile-icon">
+            <i class="fas fa-user"></i> <!-- Font Awesome icon -->
+        </div>
         <h2>About Me</h2>
         <p>I am an aspiring web developer eager to learn more about technology and coding. My goal is to create innovative projects and connect with the tech community.</p>
         <p>In my spare time, I enjoy reading about new technologies, participating in coding challenges, and enhancing my skills.</p>
@@ -160,7 +159,7 @@
 
     <script>
         let lastScrollTop = 0;
-        const header = document.getElementById("header");
+        const header = document.querySelector("header");
 
         window.addEventListener("scroll", function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
