@@ -14,8 +14,7 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: #f5f7fa;
+            background-color: #e5ddd5;
             color: #333;
             display: flex;
             flex-direction: column;
@@ -28,7 +27,6 @@
             padding: 10px;
             text-align: center;
             width: 100%;
-            transition: top 0.3s;
             position: fixed;
             top: 0;
             z-index: 1000;
@@ -64,13 +62,14 @@
 
         main {
             margin-left: 220px;
-            padding: 20px;
+            padding: 80px 20px 20px;
             width: calc(100% - 220px);
-            margin-top: 60px;
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             flex: 1;
+            max-width: 600px;
+            margin: auto;
         }
 
         .form-group {
@@ -85,8 +84,10 @@
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: none;
             border-radius: 5px;
+            background-color: #f1f1f1;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         button {
@@ -96,6 +97,8 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
         }
 
         button:hover {
@@ -109,6 +112,26 @@
             color: #fff;
             border-radius: 10px;
             margin-top: 20px;
+        }
+
+        /* Message style */
+        .message {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            position: relative;
+            max-width: 75%;
+        }
+
+        .message.user {
+            background-color: #dcf8c6; /* Light green for user messages */
+            margin-left: auto;
+        }
+
+        .message.admin {
+            background-color: #fff; /* White for admin messages */
+            margin-right: auto;
         }
 
         /* Responsive Styles */
@@ -144,6 +167,13 @@
 
     <main>
         <h2>Contact Me</h2>
+        <div class="message user">
+            <strong>Student:</strong> How do I ask a question?
+        </div>
+        <div class="message admin">
+            <strong>Swarup Sir:</strong> You can use the form below.
+        </div>
+        
         <form id="contactForm" onsubmit="sendWhatsAppMessage(); return false;">
             <div class="form-group">
                 <label for="subject">Your Subject</label>
