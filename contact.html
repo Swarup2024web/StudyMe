@@ -74,6 +74,11 @@
 
         .form-group {
             margin-bottom: 15px;
+            border: 2px solid transparent;
+            border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            border-image-slice: 1;
+            padding: 10px;
+            border-radius: 5px;
         }
 
         .form-group label {
@@ -166,7 +171,6 @@
     </nav>
 
     <main>
-        <h2>Contact Me</h2>
         <div class="message user">
             <strong>Student:</strong> How do I ask a question?
         </div>
@@ -209,7 +213,7 @@
                 <label for="place">Place</label>
                 <input type="text" id="place" required>
             </div>
-            <button type="submit">Send via WhatsApp - Ask Swarup Sir</button>
+            <button type="submit">Send Question</button>
         </form>
     </main>
 
