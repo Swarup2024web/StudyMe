@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swarup Sir</title>
+    <title>Home - Swarup Sir</title>
     <style>
         /* Basic Reset */
         * {
@@ -14,7 +14,8 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #e5ddd5;
+            line-height: 1.6;
+            background-color: #f5f7fa;
             color: #333;
             display: flex;
             flex-direction: column;
@@ -27,6 +28,7 @@
             padding: 10px;
             text-align: center;
             width: 100%;
+            transition: top 0.3s;
             position: fixed;
             top: 0;
             z-index: 1000;
@@ -38,37 +40,30 @@
         }
 
         main {
-            padding: 80px 20px 20px;
+            padding: 20px;
+            width: 100%;
+            margin-top: 60px;
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             flex: 1;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            color: #007acc;
-            text-align: center;
         }
 
         .section {
             margin-bottom: 20px;
             padding: 15px;
-            border: 2px solid transparent;
-            border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-            border-image-slice: 1;
-            border-radius: 5px;
-            background-color: #f9f9f9;
+            border-radius: 10px;
+            background-color: #e0f7fa; /* Light cyan */
+            transition: transform 0.2s;
         }
 
-        .section h3 {
+        .section:hover {
+            transform: scale(1.02);
+        }
+
+        .icon {
+            font-size: 3rem; /* Adjust size as needed */
             margin-bottom: 10px;
-        }
-
-        .section p {
-            margin-bottom: 0;
         }
 
         footer {
@@ -84,7 +79,6 @@
         @media (max-width: 768px) {
             main {
                 width: 100%;
-                padding: 60px 10px;
             }
         }
     </style>
@@ -95,37 +89,48 @@
     </header>
 
     <main>
-        <h2>Welcome to Swarup Sir's Website</h2>
+        <h2>Select Your Resources</h2>
 
         <div class="section">
-            <h3>Class Selection</h3>
-            <ul>
-                <li><a href="#">Class 5</a></li>
-                <li><a href="#">Class 6</a></li>
-                <li><a href="#">Class 7</a></li>
-                <li><a href="#">Class 8</a></li>
-                <li><a href="#">Class 9</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
+            <div class="icon">📹</div>
             <h3>Videos</h3>
-            <p>Explore educational videos on various topics.</p>
+            <p>Explore our video tutorials on various topics to enhance your learning experience.</p>
+            <a href="videos.html">View Videos</a>
         </div>
 
         <div class="section">
+            <div class="icon">📝</div>
             <h3>Notes</h3>
-            <p>Find detailed notes for your study materials.</p>
+            <p>Access detailed notes for each subject, tailored to support your studies.</p>
+            <a href="notes.html">View Notes</a>
         </div>
 
         <div class="section">
+            <div class="icon">📚</div>
             <h3>GK & Current Affairs</h3>
-            <p>Stay updated with the latest general knowledge and current affairs.</p>
+            <p>Stay updated with the latest general knowledge and current events.</p>
+            <a href="gk_current_affairs.html">View GK & Current Affairs</a>
         </div>
     </main>
 
     <footer>
         <p>&copy; 2024 Swarup Sir</p>
     </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                header.style.top = "-60px";
+            } else {
+                header.style.top = "0";
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
 </body>
 </html>
