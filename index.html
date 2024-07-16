@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swarup Sir</title>
     <link rel="icon" href="icon.png"> <!-- Replace with your icon path -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -32,11 +33,18 @@
         }
 
         .card {
+            display: flex;
+            align-items: center;
             margin: 20px 0;
             padding: 20px;
             border-radius: 10px;
             color: white;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card i {
+            font-size: 24px;
+            margin-right: 15px;
         }
 
         .notes { background-color: #3498db; }
@@ -69,33 +77,51 @@
 
     <main>
         <section class="card notes">
-            <h2>Notes</h2>
-            <p>Short description of notes.</p>
+            <i class="fas fa-book"></i>
+            <div>
+                <h2>Notes</h2>
+                <p>Comprehensive study notes covering key concepts and topics for easier learning.</p>
+            </div>
         </section>
         
         <section class="card gk">
-            <h2>GK and Current Affairs</h2>
-            <p>Short description of GK and current affairs.</p>
+            <i class="fas fa-newspaper"></i>
+            <div>
+                <h2>GK and Current Affairs</h2>
+                <p>Stay updated with the latest general knowledge and current events to enhance your awareness.</p>
+            </div>
         </section>
 
         <section class="card videos">
-            <h2>Videos</h2>
-            <p>Short description of videos.</p>
+            <i class="fas fa-video"></i>
+            <div>
+                <h2>Videos</h2>
+                <p>Engaging video content that helps visualize and understand complex subjects effectively.</p>
+            </div>
         </section>
 
         <section class="card magazine">
-            <h2>Magazine of the Month</h2>
-            <p>Short description of the magazine.</p>
+            <i class="fas fa-book-open"></i>
+            <div>
+                <h2>Magazine of the Month</h2>
+                <p>Discover interesting articles and insights in the monthly magazine to expand your knowledge.</p>
+            </div>
         </section>
 
         <section class="card childcare">
-            <h2>Child Care Tips</h2>
-            <p>Short description of child care tips.</p>
+            <i class="fas fa-baby"></i>
+            <div>
+                <h2>Child Care Tips</h2>
+                <p>Practical advice for parents on caring for children, promoting healthy development and well-being.</p>
+            </div>
         </section>
 
         <section class="card spoken-english">
-            <h2>Spoken English</h2>
-            <p>Short description of spoken English.</p>
+            <i class="fas fa-comments"></i>
+            <div>
+                <h2>Spoken English</h2>
+                <p>Improve your spoken English skills with helpful tips, practice exercises, and conversational guides.</p>
+            </div>
         </section>
     </main>
 
