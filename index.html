@@ -3,100 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            background-color: #f5f7fa;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background: #4a90e2;
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            background: #333;
-            color: #fff;
-            width: 200px;
-            padding-top: 60px; /* Space for header */
-            position: fixed;
-            height: 100%;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            padding: 15px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        main {
-            margin-left: 220px; /* Space for sidebar */
-            padding: 20px;
-            width: calc(100% - 220px); /* Adjust width */
-            margin-top: 60px; /* Space for header */
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            flex: 1;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #4a90e2;
-            color: #fff;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            nav {
-                width: 100%;
-                position: relative;
-                height: auto;
-            }
-            nav ul {
-                display: flex;
-                justify-content: space-around;
-            }
-            main {
-                margin-left: 0; /* No sidebar */
-                width: 100%; /* Full width */
-            }
-        }
-    </style>
+    <title>Home - Swarup Sir</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1 style="margin: 0;">My Website</h1>
+        <h1>Swarup Sir</h1>
     </header>
 
     <nav>
@@ -108,12 +20,54 @@
     </nav>
 
     <main>
-        <h2>Home Content</h2>
-        <p>This is the main content area of the home page. Here, you can introduce your website and provide any relevant information.</p>
+        <h2>Select Your Class</h2>
+        <div class="class-section">
+            <div class="class-item">
+                <h3>Class 5</h3>
+                <div class="icon">📹</div>
+                <p>Videos</p>
+            </div>
+            <div class="class-item">
+                <h3>Class 6</h3>
+                <div class="icon">📝</div>
+                <p>Notes</p>
+            </div>
+            <div class="class-item">
+                <h3>Class 7</h3>
+                <div class="icon">📚</div>
+                <p>GK & Current Affairs</p>
+            </div>
+            <div class="class-item">
+                <h3>Class 8</h3>
+                <div class="icon">📖</div>
+                <p>Videos</p>
+            </div>
+            <div class="class-item">
+                <h3>Class 9</h3>
+                <div class="icon">🗒️</div>
+                <p>Notes</p>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 My Website</p>
+        <p>&copy; 2024 Swarup Sir</p>
     </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                header.style.top = "-60px";
+            } else {
+                header.style.top = "0";
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
 </body>
 </html>
