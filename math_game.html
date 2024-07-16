@@ -79,6 +79,44 @@
         .wrong {
             background-color: #ffcdd2; /* Light red */
         }
+
+        .play-again, .home-button {
+            display: none; /* Initially hidden */
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            z-index: 100;
+        }
+
+        .popup button {
+            background-color: #2ecc71; /* Green */
+        }
+
+        @media (max-width: 600px) {
+            .info {
+                width: 90%;
+                right: 5%;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            .question {
+                font-size: 1.2em;
+            }
+            button {
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -96,6 +134,14 @@
         <span class="correct">Correct Answers: <span id="correctCount">0</span></span>
         <span class="wrong">Wrong Answers: <span id="wrongCount">0</span></span>
     </div>
+
+    <div class="popup" id="popup">
+        <p>Thank you for playing the game. Play again to speed yourself up. - Swarup Sir</p>
+        <button onclick="playAgain()">Ok</button>
+    </div>
+    
+    <button class="play-again" id="playAgainButton" onclick="restartGame()">Play Again</button>
+    <button class="home-button" id="homeButton" onclick="goHome()">Go to Home</button>
 
     <script>
         let correctAnswer;
@@ -130,14 +176,16 @@
                 resultDisplay.innerText = `Incorrect! The correct answer was ${correctAnswer}.`;
             }
             updateInfo();
-            document.getElementById('nextButton').style.display = 'block';
+            if (questionCount < totalQuestions) {
+                document.getElementById('nextButton').style.display = 'block';
+            } else {
+                showPopup();
+            }
         }
 
         function nextQuestion() {
             if (questionCount < totalQuestions) {
                 generateQuestion();
-            } else {
-                showScore();
             }
         }
 
@@ -148,14 +196,29 @@
             document.getElementById('wrongCount').innerText = wrongAnswers;
         }
 
-        function showScore() {
-            alert(`Game Over! Your score is: ${score} out of ${totalQuestions * 2}`);
-            // Reset for a new game
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('nextButton').style.display = 'none'; // Hide the next button
+        }
+
+        function playAgain() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('playAgainButton').style.display = 'block';
+            document.getElementById('homeButton').style.display = 'block';
+        }
+
+        function restartGame() {
             score = 0;
             questionCount = 0;
             correctAnswers = 0;
             wrongAnswers = 0;
+            document.getElementById('playAgainButton').style.display = 'none';
+            document.getElementById('homeButton').style.display = 'none';
             generateQuestion();
+        }
+
+        function goHome() {
+            window.location.href = 'index.html';
         }
 
         // Generate the first question on load
