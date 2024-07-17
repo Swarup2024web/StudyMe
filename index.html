@@ -69,6 +69,7 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             width: calc(33.333% - 20px); /* Three cards per row with space */
             box-sizing: border-box; /* Include padding in width */
+            position: relative; /* Position relative for absolute elements */
         }
 
         .card i {
@@ -96,6 +97,19 @@
             position: relative;
             bottom: 0;
             width: 100%;
+        }
+
+        .floating-button {
+            position: fixed; /* Fixed position */
+            bottom: 20px; /* Distance from bottom */
+            right: 20px; /* Distance from right */
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 50%; /* Circular button */
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none; /* No underline */
+            font-size: 1.5rem; /* Icon size */
         }
 
         /* Responsive Styles */
@@ -131,7 +145,6 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
             <a href="math_game.html" class="math-button">
                 <i class="fas fa-superscript"></i> Math Game
             </a>
@@ -151,7 +164,11 @@
             <i class="fas fa-newspaper"></i>
             <div>
                 <h2 style="font-size: 1.8rem;">GK and Current Affairs</h2>
-                <p style="font-size: 1.1rem;">Stay updated with the latest general knowledge and current events to enhance your awareness.</p>
+                <p style="font-size: 1.1rem;">Stay updated with the latest general knowledge and current events to enhance your awareness.
+                    <a href="gk_current_affairs.html" style="color: white; text-decoration: none;">
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </p>
             </div>
         </section>
 
@@ -187,6 +204,10 @@
             </div>
         </section>
     </main>
+
+    <a href="contact.html" class="floating-button">
+        <i class="fas fa-comment-dots"></i>
+    </a>
 
     <footer>
         <p>&copy; 2024 Swarup Sir</p>
