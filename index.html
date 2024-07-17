@@ -39,7 +39,7 @@
             background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); /* Rainbow background */
             color: white; /* White text color */
             padding: 5px 10px; /* Smaller padding */
-            border: none;
+            border: 2px solid white; /* White border */
             border-radius: 15px; /* Rounded corners */
             font-size: 0.9rem; /* Smaller font size */
             cursor: pointer;
@@ -54,6 +54,9 @@
 
         main {
             padding: 20px;
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for responsive design */
+            justify-content: space-between; /* Space between cards */
         }
 
         .card {
@@ -64,7 +67,7 @@
             border-radius: 10px;
             color: white;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            width: 100%; /* Ensure cards take full width */
+            width: calc(33.333% - 20px); /* Three cards per row with space */
             box-sizing: border-box; /* Include padding in width */
         }
 
@@ -103,8 +106,7 @@
             }
 
             .card {
-                flex-direction: column; /* Stack card contents vertically */
-                align-items: flex-start; /* Align items to start */
+                width: 100%; /* Full width for smaller screens */
             }
         }
 
@@ -131,7 +133,7 @@
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
             <a href="math_game.html" class="math-button">
-                <i class="fas fa-plus"></i> Math Game
+                <i class="fas fa-superscript"></i> Math Game
             </a>
         </nav>
     </header>
