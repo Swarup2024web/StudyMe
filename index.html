@@ -49,10 +49,6 @@
             margin-top: 10px; /* Spacing from links above */
         }
 
-        .math-button i {
-            margin-right: 5px; /* Space between icon and text */
-        }
-
         main {
             padding: 20px;
             display: flex;
@@ -62,7 +58,7 @@
 
         .card {
             display: flex;
-            align-items: center;
+            flex-direction: column; /* Column layout */
             margin: 20px 0;
             padding: 20px;
             border-radius: 10px;
@@ -73,14 +69,14 @@
             position: relative; /* Position relative for absolute elements */
         }
 
-        .card i {
-            font-size: 36px; /* Increased icon size */
-            margin-right: 15px;
-            color: white; /* Default icon color */
+        .card h2 {
+            font-size: 1.4rem; /* Smaller heading size */
+            margin: 0 0 10px; /* Margin below heading */
         }
 
-        .card div {
-            flex-grow: 1; /* Allows the text to fill the remaining space */
+        .card p {
+            font-size: 0.9rem; /* Smaller paragraph size */
+            margin: 0; /* Remove default margin */
         }
 
         .notes { background-color: #8e44ad; } /* Purple */
@@ -131,11 +127,11 @@
             }
 
             .card h2 {
-                font-size: 1.4rem; /* Smaller heading size */
+                font-size: 1.2rem; /* Smaller heading size for mobile */
             }
 
             .card p {
-                font-size: 0.9rem; /* Smaller paragraph size */
+                font-size: 0.8rem; /* Smaller paragraph size for mobile */
             }
         }
     </style>
@@ -154,51 +150,33 @@
 
     <main>
         <section class="card notes">
-            <i class="fas fa-book"></i>
-            <div>
-                <h2 style="font-size: 1.8rem;">Notes</h2>
-                <p style="font-size: 1.1rem;">Comprehensive study notes covering key concepts and topics for easier learning.</p>
-            </div>
+            <h2>Notes</h2>
+            <p>Comprehensive study notes covering key concepts and topics for easier learning.</p>
         </section>
         
         <section class="card gk">
-            <i class="fas fa-newspaper"></i>
-            <div>
-                <h2 style="font-size: 1.6rem;">GK and Current Affairs <i class="fas fa-arrow-right" style="font-size: 0.8rem;"></i></h2>
-                <p style="font-size: 1.1rem;">Stay updated with the latest general knowledge and current events to enhance your awareness.</p>
-            </div>
+            <h2><a href="gk_current_affairs.html" style="color: white; text-decoration: none;">GK and Current Affairs</a></h2>
+            <p>Stay updated with the latest general knowledge and current events to enhance your awareness.</p>
         </section>
 
         <section class="card videos">
-            <i class="fas fa-video"></i>
-            <div>
-                <h2 style="font-size: 1.8rem;">Videos</h2>
-                <p style="font-size: 1.1rem;">Engaging video content that helps visualize and understand complex subjects effectively.</p>
-            </div>
+            <h2>Videos</h2>
+            <p>Engaging video content that helps visualize and understand complex subjects effectively.</p>
         </section>
 
         <section class="card magazine">
-            <i class="fas fa-book-open"></i>
-            <div>
-                <h2 style="font-size: 1.8rem;">Magazine of the Month</h2>
-                <p style="font-size: 1.1rem;">Discover interesting articles and insights in the monthly magazine to expand your knowledge.</p>
-            </div>
+            <h2>Magazine of the Month</h2>
+            <p>Discover interesting articles and insights in the monthly magazine to expand your knowledge.</p>
         </section>
 
         <section class="card childcare">
-            <i class="fas fa-baby"></i>
-            <div>
-                <h2 style="font-size: 1.8rem;">Child Care Tips</h2>
-                <p style="font-size: 1.1rem;">Practical advice for parents on caring for children, promoting healthy development and well-being.</p>
-            </div>
+            <h2>Child Care Tips</h2>
+            <p>Practical advice for parents on caring for children, promoting healthy development and well-being.</p>
         </section>
 
         <section class="card spoken-english">
-            <i class="fas fa-comments"></i>
-            <div>
-                <h2 style="font-size: 1.8rem;">Spoken English</h2>
-                <p style="font-size: 1.1rem;">Improve your spoken English skills with helpful tips, practice exercises, and conversational guides.</p>
-            </div>
+            <h2>Spoken English</h2>
+            <p>Improve your spoken English skills with helpful tips, practice exercises, and conversational guides.</p>
         </section>
     </main>
 
