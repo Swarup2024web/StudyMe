@@ -22,6 +22,12 @@
             text-align: center;
         }
 
+        nav {
+            display: flex; /* Flexbox for horizontal layout */
+            justify-content: center;
+            align-items: center;
+        }
+
         nav a {
             margin: 0 15px;
             color: white;
@@ -29,12 +35,12 @@
         }
 
         .math-button {
-            background-color: white; /* White background */
-            color: #2ecc71; /* Green text color */
-            padding: 10px 15px;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); /* Rainbow background */
+            color: white; /* White text color */
+            padding: 5px 10px; /* Smaller padding */
             border: none;
-            border-radius: 25px; /* Rounded corners */
-            font-size: 1rem;
+            border-radius: 15px; /* Rounded corners */
+            font-size: 0.9rem; /* Smaller font size */
             cursor: pointer;
             text-align: center;
             text-decoration: none;
@@ -88,13 +94,8 @@
 
         /* Responsive Styles */
         @media (max-width: 768px) {
-            nav a {
-                display: block; /* Stack links on smaller screens */
-                margin: 10px 0; /* Vertical spacing */
-            }
-
             .math-button {
-                width: 100%; /* Full width button on small screens */
+                width: auto; /* Auto width for smaller screens */
                 text-align: center; /* Center the text */
             }
 
@@ -106,7 +107,7 @@
 
         @media (max-width: 480px) {
             .math-button {
-                font-size: 0.9rem; /* Adjust font size for smaller screens */
+                font-size: 0.8rem; /* Adjust font size for smaller screens */
             }
 
             .card h2 {
@@ -126,11 +127,9 @@
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <div>
-                <a href="math_game.html" class="math-button">
-                    <i class="fas fa-plus"></i> Math Game
-                </a>
-            </div>
+            <a href="math_game.html" class="math-button">
+                <i class="fas fa-plus"></i> Math Game
+            </a>
         </nav>
     </header>
 
