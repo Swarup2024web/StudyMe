@@ -84,6 +84,38 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav a {
+                display: block; /* Stack links on smaller screens */
+                margin: 10px 0; /* Vertical spacing */
+            }
+
+            .math-button {
+                width: 100%; /* Full width button on small screens */
+                text-align: center; /* Center the text */
+            }
+
+            .card {
+                flex-direction: column; /* Stack card contents vertically */
+                align-items: flex-start; /* Align items to start */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .math-button {
+                font-size: 0.9rem; /* Adjust font size for smaller screens */
+            }
+
+            .card h2 {
+                font-size: 1.5rem; /* Adjust heading size */
+            }
+
+            .card p {
+                font-size: 1rem; /* Adjust paragraph size */
+            }
+        }
     </style>
 </head>
 <body>
