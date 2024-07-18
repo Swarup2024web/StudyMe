@@ -22,8 +22,7 @@
 
         /* Header Styles */
         header {
-            background-color: #4285f4; /* Google Blue */
-            color: white;
+            background-color: #fff; /* White background */
             padding: 15px;
             text-align: center;
             width: 100%;
@@ -31,35 +30,44 @@
             position: fixed;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle black border */
         }
 
         .header-top {
             font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 10px;
+            background: linear-gradient(to right, #e91e63, #9c27b0, #2196f3, #4caf50, #ffeb3b, #ff9800, #f44336); /* Rainbow text */
+            -webkit-background-clip: text; /* Clip text to background gradient */
+            -webkit-text-fill-color: transparent; /* Make text transparent */
+            display: inline-block;
+            padding: 5px 10px;
+            border: 1px solid #333; /* Subtle black border */
         }
 
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
             margin: 0;
+            color: #333; /* Text color */
         }
 
         nav {
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-top: 10px;
         }
 
         nav a {
             margin: 0 15px;
-            color: white;
+            color: #333; /* Text color */
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         nav a:hover {
-            color: #3b78e7; /* Darker shade of Google Blue */
+            color: #666; /* Darker text color on hover */
         }
 
         /* Main Content Styles */
@@ -180,9 +188,6 @@
 <body>
     <header>
         <div class="header-top">SWARUP SIR</div>
-        <div class="logo">
-            <h1>SWARUP SIR</h1>
-        </div>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
