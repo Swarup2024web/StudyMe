@@ -139,6 +139,38 @@
             padding-top: 20px;
         }
 
+        .comment-form {
+            margin-top: 20px;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .comment-form button {
+            background-color: #3498db; /* Blue color */
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .comment-form button:hover {
+            background-color: #555;
+        }
+
+        .comments-list {
+            margin-top: 20px;
+        }
+
         .comment {
             margin-bottom: 20px;
             border-bottom: 1px solid #ccc;
@@ -163,6 +195,48 @@
             background-color: #f9f9f9;
             margin-top: 40px;
         }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 10px;
+            }
+
+            .site-title {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: flex-end;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                background-color: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .nav-links li a {
+                padding: 10px;
+            }
+
+            .nav-toggle {
+                display: block;
+                font-size: 1.8rem;
+                cursor: pointer;
+            }
+        }
     </style>
 </head>
 
@@ -178,6 +252,9 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="math_game.html" class="button">Math Game</a></li>
                 </ul>
+                <div class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
             </nav>
         </div>
     </header>
@@ -190,11 +267,11 @@
             </div>
 
             <div class="post-description">
-                <p>The Nile is often considered the longest river in the world, stretching for approximately 6,650 kilometers (4,130 miles) through northeastern Africa. It flows through eleven countries, including Egypt, Sudan, Uganda, and Ethiopia, before emptying into the Mediterranean Sea.</p>
-                <p>Throughout history, the Nile River has played a crucial role in the development of ancient Egyptian civilization, providing fertile land for agriculture and transportation routes for trade. It is also a vital source of water for millions of people living along its banks.</p>
-                <p>The Nile is formed by two major tributaries: the White Nile and the Blue Nile. The White Nile originates in East Africa, while the Blue Nile begins in Ethiopia. These tributaries converge in Sudan, forming the main stem of the Nile that continues northward through Egypt.</p>
-                <p>Today, the Nile remains an essential resource for agriculture, hydroelectric power generation, and tourism in the region. Its annual flooding, controlled by the construction of the Aswan High Dam in Egypt, has both benefits and challenges for the surrounding communities.</p>
-                <p>In conclusion, the Nile River holds immense historical, cultural, and economic significance for the countries it traverses. Its impact on the livelihoods of millions of people underscores its importance as one of the world's most iconic rivers.</p>
+                <p>The Nile River is the longest river in the world, stretching for approximately 6,650 kilometers (4,130 miles) through northeastern Africa. It flows through eleven countries, including Egypt, Sudan, Uganda, and Ethiopia, before emptying into the Mediterranean Sea.</p>
+                <p>Throughout history, the Nile has played a crucial role in the development of ancient Egyptian civilization, providing fertile land for agriculture and serving as a vital transportation route for trade. It continues to be a lifeline for millions of people living along its banks.</p>
+                <p>The Nile is formed by two major tributaries: the White Nile and the Blue Nile. The White Nile originates in East Africa, while the Blue Nile begins in Ethiopia. These tributaries converge in Sudan, forming the main stem of the Nile that flows northward through Egypt.</p>
+                <p>Today, the Nile River remains an essential resource for agriculture, hydroelectric power generation, and tourism in the region. The construction of the Aswan High Dam in Egypt has helped regulate its annual flooding, providing benefits and challenges to the surrounding communities.</p>
+                <p>In conclusion, the Nile River holds immense historical, cultural, and economic significance for the countries it traverses. Its impact on the livelihoods of millions underscores its importance as one of the world's most iconic rivers.</p>
             </div>
 
             <div class="author-box">
@@ -214,36 +291,45 @@
             <div class="comments-section">
                 <h3>Comments</h3>
 
-                <div class="comment">
-                    <div class="comment-meta">
-                        <span class="comment-author">John Doe</span> - July 19, 2024
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero sapien, vel malesuada risus vestibulum ac.</p>
+                <div class="comment-form">
+                    <textarea placeholder="Add your comment"></textarea>
+                    <button>Post Comment</button>
                 </div>
 
-                <div class="comment">
-                    <div class="comment-meta">
-                        <span class="comment-author">Jane Smith</span> - July 20, 2024
+                <div class="comments-list">
+                    <div class="comment">
+                        <div class="comment-meta">
+                            <strong>John Doe</strong> - <span>2 hours ago</span>
+                        </div>
+                        <p>This is a great article about the Nile River!</p>
                     </div>
-                    <p>Etiam nec lectus id mauris gravida elementum. Sed ornare ultricies tristique. Nullam eleifend sem eu diam euismod, eget aliquam orci pretium.</p>
-                </div>
 
-                <div class="comment">
-                    <div class="comment-meta">
-                        <span class="comment-author">Michael Brown</span> - July 21, 2024
+                    <div class="comment">
+                        <div class="comment-meta">
+                            <strong>Jane Smith</strong> - <span>1 hour ago</span>
+                        </div>
+                        <p>Thanks for sharing this informative piece!</p>
                     </div>
-                    <p>Mauris nec mi a leo fermentum laoreet. Proin viverra dolor vitae enim accumsan, id blandit leo tempus.</p>
+                    <!-- Additional comments can go here -->
                 </div>
             </div>
         </article>
     </div>
 
     <footer>
-        <p>&copy; 2024 Swarup Sir. All rights reserved.</p>
+        <p>&copy; 2024 Your Website. All rights reserved.</p>
     </footer>
 
-    <!-- Font Awesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        // Toggle navigation menu for mobile
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
