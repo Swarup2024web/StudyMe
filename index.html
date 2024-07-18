@@ -9,13 +9,13 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: rgba(255, 255, 255, 0.9);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
             overflow-x: hidden; /* Prevent horizontal overflow */
         }
 
         header {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: #333;
             color: white;
             position: sticky;
             top: 0;
@@ -34,19 +34,29 @@
             margin: 0 15px;
             color: white;
             text-decoration: none;
+            transition: color 0.3s ease; /* Smooth color transition on hover */
+        }
+
+        nav a:hover {
+            color: #f39c12; /* Orange hover color */
         }
 
         .math-button {
             background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); /* Rainbow background */
             color: white; /* White text color */
-            padding: 5px 10px; /* Smaller padding */
+            padding: 10px 20px; /* Larger padding */
             border: 2px solid white; /* White border */
-            border-radius: 15px; /* Rounded corners */
-            font-size: 0.9rem; /* Smaller font size */
+            border-radius: 25px; /* Rounded corners */
+            font-size: 1rem; /* Slightly larger font size */
             cursor: pointer;
             text-align: center;
             text-decoration: none;
             margin-top: 10px; /* Spacing from links above */
+            transition: background-color 0.3s ease; /* Smooth background color transition */
+        }
+
+        .math-button:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Lighten background on hover */
         }
 
         main {
@@ -57,73 +67,87 @@
         }
 
         .card {
+            flex: 1 1 calc(33.333% - 20px); /* Three cards per row with space */
             display: flex;
             flex-direction: column; /* Column layout */
             margin: 20px 0;
             padding: 20px;
             border-radius: 10px;
             color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            width: calc(33.333% - 20px); /* Three cards per row with space */
-            box-sizing: border-box; /* Include padding in width */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: #3498db; /* Blue background */
             position: relative; /* Position relative for absolute elements */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Lift card on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
         }
 
         .card h2 {
-            font-size: 1.4rem; /* Smaller heading size */
+            font-size: 1.4rem; /* Larger heading size */
             margin: 0 0 10px; /* Margin below heading */
         }
 
         .card p {
-            font-size: 0.9rem; /* Smaller paragraph size */
+            font-size: 0.9rem; /* Slightly larger paragraph size */
             margin: 0; /* Remove default margin */
+            opacity: 0.9; /* Reduced opacity */
         }
 
-        .notes { background-color: #8e44ad; } /* Purple */
-        .gk { background-color: #e67e22; } /* Orange */
-        .videos { background-color: #3498db; } /* Blue */
-        .magazine { background-color: #1abc9c; } /* Teal */
-        .childcare { background-color: #f39c12; } /* Yellow-Orange */
-        .spoken-english { background-color: #c0392b; } /* Red */
+        .card:nth-child(even) {
+            background-color: #e67e22; /* Alternate card background color */
+        }
 
         footer {
             text-align: center;
             padding: 10px;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: #333;
             color: white;
             position: relative;
             bottom: 0;
             width: 100%;
+            margin-top: 20px; /* Space above footer */
         }
 
         .floating-button {
             position: fixed; /* Fixed position */
             bottom: 20px; /* Distance from bottom */
             right: 20px; /* Distance from right */
-            background-color: green; /* Green background */
+            background-color: #f39c12; /* Orange background */
             color: white;
             border-radius: 50%; /* Circular button */
             padding: 15px; /* Increased padding */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             text-decoration: none; /* No underline */
             font-size: 1.8rem; /* Larger icon size */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
         }
 
-        /* Responsive Styles */
+        .floating-button:hover {
+            transform: scale(1.1); /* Scale up on hover */
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+        }
+
         @media (max-width: 768px) {
             .math-button {
-                width: auto; /* Auto width for smaller screens */
-                text-align: center; /* Center the text */
+                width: 100%; /* Full width for smaller screens */
             }
 
             .card {
-                width: calc(50% - 20px); /* Two cards per row */
+                flex: 1 1 calc(50% - 20px); /* Two cards per row */
             }
         }
 
         @media (max-width: 480px) {
             .math-button {
-                font-size: 0.8rem; /* Adjust font size for smaller screens */
+                font-size: 0.9rem; /* Adjust font size for smaller screens */
+                padding: 8px 16px; /* Adjust padding */
+            }
+
+            .card {
+                flex: 1 1 100%; /* Single card per row */
             }
 
             .card h2 {
@@ -149,32 +173,32 @@
     </header>
 
     <main>
-        <section class="card notes">
+        <section class="card">
             <h2>Notes</h2>
             <p>Comprehensive study notes covering key concepts and topics for easier learning.</p>
         </section>
         
-        <section class="card gk">
+        <section class="card">
             <h2><a href="gk_current_affairs.html" style="color: white; text-decoration: none;">GK and Current Affairs</a></h2>
             <p>Stay updated with the latest general knowledge and current events to enhance your awareness.</p>
         </section>
 
-        <section class="card videos">
+        <section class="card">
             <h2>Videos</h2>
             <p>Engaging video content that helps visualize and understand complex subjects effectively.</p>
         </section>
 
-        <section class="card magazine">
+        <section class="card">
             <h2>Magazine of the Month</h2>
             <p>Discover interesting articles and insights in the monthly magazine to expand your knowledge.</p>
         </section>
 
-        <section class="card childcare">
+        <section class="card">
             <h2>Child Care Tips</h2>
             <p>Practical advice for parents on caring for children, promoting healthy development and well-being.</p>
         </section>
 
-        <section class="card spoken-english">
+        <section class="card">
             <h2>Spoken English</h2>
             <p>Improve your spoken English skills with helpful tips, practice exercises, and conversational guides.</p>
         </section>
