@@ -10,9 +10,9 @@
         /* General Styles */
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: rgba(255, 255, 255, 0.9);
-            overflow-x: hidden; /* Prevent horizontal overflow */
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
         }
 
         a {
@@ -24,19 +24,28 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #333;
+            background-color: #4285f4; /* Google Blue */
             color: white;
             padding: 10px 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            flex: 1;
+            font-size: 1.8rem;
         }
 
         .logo h1 {
             margin: 0;
-            font-size: 1.8rem;
+            font-weight: 500;
         }
 
         nav {
-            display: flex;
+            flex: 2;
+            text-align: center;
         }
 
         nav a {
@@ -44,12 +53,18 @@
             padding: 10px;
             color: white;
             font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #3b78e7; /* Darker shade of Google Blue */
+            border-radius: 5px;
         }
 
         .whatsapp-button {
-            margin-left: auto; /* Push WhatsApp button to the right */
+            flex: 1;
             display: flex;
-            align-items: center;
+            justify-content: flex-end;
         }
 
         .whatsapp-button a {
@@ -60,55 +75,49 @@
             padding: 10px 15px;
             border-radius: 5px;
             font-size: 1rem;
+            transition: background-color 0.3s ease;
         }
 
-        .whatsapp-button a i {
-            margin-right: 5px;
+        .whatsapp-button a:hover {
+            background-color: #128c7e; /* Darker shade of WhatsApp green */
         }
 
         /* Floating WhatsApp Button */
-        .whatsapp-button {
+        .floating-whatsapp {
             position: fixed;
             bottom: 20px;
-            right: calc(50% - 30px); /* Adjust to center horizontally */
+            right: 20px;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .header-container {
-                flex-direction: column;
-                align-items: flex-start;
+                flex-wrap: wrap;
                 padding: 10px;
             }
 
-            .logo h1 {
-                font-size: 1.5rem;
-                margin-bottom: 10px;
+            .logo, .whatsapp-button {
+                flex-basis: 100%;
+                text-align: center;
             }
 
             nav {
+                order: 3;
+                flex-basis: 100%;
                 margin-top: 10px;
+                text-align: center;
             }
 
             nav a {
-                margin: 0 10px;
-                padding: 8px;
+                display: block;
+                margin: 5px 0;
+                padding: 10px;
             }
 
             .whatsapp-button {
-                margin-left: 0;
+                order: 2;
                 margin-top: 10px;
-            }
-
-            .whatsapp-button a {
-                padding: 8px 12px;
-                font-size: 0.9rem;
-            }
-
-            .whatsapp-button {
-                right: 20px; /* Adjust position for smaller screens */
             }
         }
     </style>
@@ -126,7 +135,7 @@
                 <a href="math_game.html">Math Game</a>
             </nav>
             <div class="whatsapp-button">
-                <a href="https://wa.me/yourphonenumber" target="_blank">
+                <a href="https://wa.me/916294390641" target="_blank">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
@@ -164,6 +173,13 @@
             <p>Improve your spoken English skills with helpful tips, practice exercises, and conversational guides.</p>
         </section>
     </main>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp">
+        <a href="https://wa.me/916294390641" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <footer>
         <p>&copy; 2024 Swarup Sir</p>
