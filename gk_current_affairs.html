@@ -56,19 +56,23 @@
         .question {
             margin-bottom: 20px;
             padding: 15px;
-            border: 2px solid transparent;
-            border-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-            border-image-slice: 1;
             border-radius: 5px;
             background-color: #f9f9f9;
         }
 
         .question h3 {
             margin-bottom: 10px;
+            color: #007acc;
         }
 
         .question p {
             margin-bottom: 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
         }
 
         footer {
@@ -78,6 +82,21 @@
             color: #fff;
             border-radius: 10px;
             margin-top: 20px;
+        }
+
+        .language-filter {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .language-filter button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007acc;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         /* Responsive Styles */
@@ -97,35 +116,83 @@
     <main>
         <h2>GK & Current Affairs</h2>
 
+        <div class="language-filter">
+            <button onclick="changeLanguage('en')">English</button>
+            <button onclick="changeLanguage('bn')">Bengali</button>
+            <button onclick="changeLanguage('ru')">Russian</button>
+        </div>
+
         <!-- Questions and Answers in Bengali -->
-        <div class="question">
-            <h3>প্রশ্ন ১: ভারতের জাতীয় ফুল কী?</h3>
-            <p>উত্তর: পদ্ম</p>
-        </div>
-
-        <div class="question">
-            <h3>প্রশ্ন ২: ভারতের প্রথম প্রধানমন্ত্রী কে ছিলেন?</h3>
-            <p>উত্তর: জওহরলাল নেহেরু</p>
-        </div>
-
-        <div class="question">
-            <h3>প্রশ্ন ৩: ভারতের জাতীয় পশু কী?</h3>
-            <p>উত্তর: রয়েল বেঙ্গল টাইগার</p>
-        </div>
-
-        <div class="question">
-            <h3>প্রশ্ন ৪: ভারতের জাতীয় পাখি কী?</h3>
-            <p>উত্তর: ময়ূর</p>
-        </div>
-
-        <div class="question">
-            <h3>প্রশ্ন ৫: ভারতের বৃহত্তম রাজ্য কোনটি?</h3>
-            <p>উত্তর: রাজস্থান</p>
+        <div id="content">
+            <div class="question">
+                <h3>প্রশ্ন ১: ভারতের জাতীয় ফুল কী?</h3>
+                <p>উত্তর: পদ্ম</p>
+            </div>
+            <hr>
+            <div class="question">
+                <h3>প্রশ্ন ২: ভারতের প্রথম প্রধানমন্ত্রী কে ছিলেন?</h3>
+                <p>উত্তর: জওহরলাল নেহেরু</p>
+            </div>
+            <hr>
+            <div class="question">
+                <h3>প্রশ্ন ৩: ভারতের জাতীয় পশু কী?</h3>
+                <p>উত্তর: রয়েল বেঙ্গল টাইগার</p>
+            </div>
+            <hr>
+            <div class="question">
+                <h3>প্রশ্ন ৪: ভারতের জাতীয় পাখি কী?</h3>
+                <p>উত্তর: ময়ূর</p>
+            </div>
+            <hr>
+            <div class="question">
+                <h3>প্রশ্ন ৫: ভারতের বৃহত্তম রাজ্য কোনটি?</h3>
+                <p>উত্তর: রাজস্থান</p>
+            </div>
         </div>
     </main>
 
     <footer>
         <p>&copy; 2024 Swarup Sir</p>
     </footer>
+
+    <script>
+        function changeLanguage(language) {
+            const content = document.getElementById('content');
+            const questionsAnswers = {
+                en: [
+                    { q: "Question 1: What is the national flower of India?", a: "Answer: Lotus" },
+                    { q: "Question 2: Who was the first Prime Minister of India?", a: "Answer: Jawaharlal Nehru" },
+                    { q: "Question 3: What is the national animal of India?", a: "Answer: Royal Bengal Tiger" },
+                    { q: "Question 4: What is the national bird of India?", a: "Answer: Peacock" },
+                    { q: "Question 5: What is the largest state in India?", a: "Answer: Rajasthan" }
+                ],
+                bn: [
+                    { q: "প্রশ্ন ১: ভারতের জাতীয় ফুল কী?", a: "উত্তর: পদ্ম" },
+                    { q: "প্রশ্ন ২: ভারতের প্রথম প্রধানমন্ত্রী কে ছিলেন?", a: "উত্তর: জওহরলাল নেহেরু" },
+                    { q: "প্রশ্ন ৩: ভারতের জাতীয় পশু কী?", a: "উত্তর: রয়েল বেঙ্গল টাইগার" },
+                    { q: "প্রশ্ন ৪: ভারতের জাতীয় পাখি কী?", a: "উত্তর: ময়ূর" },
+                    { q: "প্রশ্ন ৫: ভারতের বৃহত্তম রাজ্য কোনটি?", a: "উত্তর: রাজস্থান" }
+                ],
+                ru: [
+                    { q: "Вопрос 1: Какой национальный цветок Индии?", a: "Ответ: Лотос" },
+                    { q: "Вопрос 2: Кто был первым премьер-министром Индии?", a: "Ответ: Джавахарлал Неру" },
+                    { q: "Вопрос 3: Какое национальное животное Индии?", a: "Ответ: Королевский бенгальский тигр" },
+                    { q: "Вопрос 4: Какая национальная птица Индии?", a: "Ответ: Павлин" },
+                    { q: "Вопрос 5: Какой самый большой штат в Индии?", a: "Ответ: Раджастан" }
+                ]
+            };
+            let newContent = '';
+            questionsAnswers[language].forEach(qa => {
+                newContent += `
+                    <div class="question">
+                        <h3>${qa.q}</h3>
+                        <p>${qa.a}</p>
+                    </div>
+                    <hr>
+                `;
+            });
+            content.innerHTML = newContent;
+        }
+    </script>
 </body>
 </html>
