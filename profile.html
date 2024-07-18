@@ -10,7 +10,6 @@
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             height: 100vh;
             background-color: #f0f0f0;
@@ -18,19 +17,27 @@
         }
 
         .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header .title {
             font-size: 32px;
             font-weight: bold;
             background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
+            margin-right: 20px;
         }
 
-        .home-icon {
-            margin-bottom: 20px;
-        }
-
-        .home-icon a {
+        .header .home-icon a {
             color: #007BFF;
             text-decoration: none;
             font-size: 24px;
@@ -42,18 +49,26 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
         }
 
         .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+            font-size: 150px;
+            color: #007BFF;
         }
 
         .username {
             margin: 10px 0;
             font-size: 24px;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .verified {
+            color: #1DA1F2;
+            margin-left: 10px;
         }
 
         .bio {
@@ -87,13 +102,17 @@
     </style>
 </head>
 <body>
-    <div class="header">SWARUP SIR</div>
-    <div class="home-icon">
-        <a href="index.html"><i class="fas fa-home"></i></a>
+    <div class="header">
+        <div class="title">SWARUP SIR</div>
+        <div class="home-icon">
+            <a href="index.html"><i class="fas fa-home"></i></a>
+        </div>
     </div>
     <div class="profile-container">
-        <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
-        <h1 class="username">Swarup Sir</h1>
+        <div class="profile-pic">
+            <i class="fas fa-user-circle"></i>
+        </div>
+        <h1 class="username">Swarup Sir <i class="fas fa-check-circle verified"></i></h1>
         <p class="bio">Teacher who loves to share knowledge with students. Passionate about technology and education.</p>
         <button onclick="fetchUserData()">Refresh Data</button>
         <div class="badges">
