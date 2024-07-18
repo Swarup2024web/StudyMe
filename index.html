@@ -17,7 +17,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         /* Header Styles */
@@ -88,6 +88,8 @@
         .card h2 {
             font-size: 1.5rem;
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
         }
 
         .card p {
@@ -106,8 +108,8 @@
         }
 
         .card i {
-            margin-bottom: 10px;
-            font-size: 2rem;
+            margin-right: 10px;
+            font-size: 1.2rem;
             color: #4285f4; /* Google Blue */
         }
 
@@ -140,12 +142,20 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
+            main {
+                padding-top: 120px; /* Adjust for header overlap */
+            }
+
             .card {
                 width: calc(50% - 40px); /* Two cards per row */
             }
         }
 
         @media (max-width: 768px) {
+            main {
+                padding-top: 150px; /* Adjust for header overlap */
+            }
+
             .card {
                 width: calc(100% - 40px); /* One card per row */
             }
@@ -153,6 +163,12 @@
             .whatsapp-button {
                 bottom: 20px;
                 right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: calc(100% - 40px); /* One card per row */
             }
         }
     </style>
@@ -165,7 +181,7 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="math_game.html">Math Game</a>
+            <a href="math_game.html" class="button">Math Game</a>
         </nav>
     </header>
 
@@ -196,7 +212,7 @@
         </section>
 
         <section class="card gk">
-            <h2><a href="gk_current_affairs.html">GK and Current Affairs</a></h2>
+            <h2><i class="fas fa-atlas"></i> <a href="gk_current_affairs.html">GK and Current Affairs</a></h2>
             <p>Stay updated with the latest general knowledge and current events to enhance your awareness.</p>
         </section>
     </main>
