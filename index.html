@@ -7,206 +7,163 @@
     <link rel="icon" href="icon.png"> <!-- Replace with your icon path -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* General Styles */
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
+            background-color: rgba(255, 255, 255, 0.9);
             overflow-x: hidden; /* Prevent horizontal overflow */
         }
 
-        header {
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             background-color: #333;
             color: white;
-            position: sticky;
-            top: 0;
-            padding: 15px;
-            text-align: center;
-            z-index: 1000; /* Ensure header is above other elements */
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 1.8rem;
         }
 
         nav {
-            display: flex; /* Flexbox for horizontal layout */
-            justify-content: center;
-            align-items: center;
+            display: flex;
         }
 
         nav a {
             margin: 0 15px;
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease; /* Smooth color transition on hover */
-        }
-
-        nav a:hover {
-            color: #f39c12; /* Orange hover color */
-        }
-
-        .math-button {
-            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); /* Rainbow background */
-            color: white; /* White text color */
-            padding: 10px 20px; /* Larger padding */
-            border: 2px solid white; /* White border */
-            border-radius: 25px; /* Rounded corners */
-            font-size: 1rem; /* Slightly larger font size */
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            margin-top: 10px; /* Spacing from links above */
-            transition: background-color 0.3s ease; /* Smooth background color transition */
-        }
-
-        .math-button:hover {
-            background-color: rgba(255, 255, 255, 0.1); /* Lighten background on hover */
-        }
-
-        main {
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap; /* Allow wrapping for responsive design */
-            justify-content: space-between; /* Space between cards */
-        }
-
-        .card {
-            flex: 1 1 calc(33.333% - 20px); /* Three cards per row with space */
-            display: flex;
-            flex-direction: column; /* Column layout */
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 10px;
-            color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            background-color: #3498db; /* Blue background */
-            position: relative; /* Position relative for absolute elements */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-        }
-
-        .card:hover {
-            transform: translateY(-5px); /* Lift card on hover */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-        }
-
-        .card h2 {
-            font-size: 1.4rem; /* Larger heading size */
-            margin: 0 0 10px; /* Margin below heading */
-        }
-
-        .card p {
-            font-size: 0.9rem; /* Slightly larger paragraph size */
-            margin: 0; /* Remove default margin */
-            opacity: 0.9; /* Reduced opacity */
-        }
-
-        .card:nth-child(even) {
-            background-color: #e67e22; /* Alternate card background color */
-        }
-
-        footer {
-            text-align: center;
             padding: 10px;
-            background-color: #333;
             color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            margin-top: 20px; /* Space above footer */
+            font-size: 1rem;
         }
 
-        .floating-button {
-            position: fixed; /* Fixed position */
-            bottom: 20px; /* Distance from bottom */
-            right: 20px; /* Distance from right */
-            background-color: #f39c12; /* Orange background */
+        .whatsapp-button {
+            margin-left: auto; /* Push WhatsApp button to the right */
+            display: flex;
+            align-items: center;
+        }
+
+        .whatsapp-button a {
+            display: flex;
+            align-items: center;
+            background-color: #25d366; /* WhatsApp green */
             color: white;
-            border-radius: 50%; /* Circular button */
-            padding: 15px; /* Increased padding */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            text-decoration: none; /* No underline */
-            font-size: 1.8rem; /* Larger icon size */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
         }
 
-        .floating-button:hover {
-            transform: scale(1.1); /* Scale up on hover */
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+        .whatsapp-button a i {
+            margin-right: 5px;
         }
 
+        /* Floating WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: calc(50% - 30px); /* Adjust to center horizontally */
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .math-button {
-                width: 100%; /* Full width for smaller screens */
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
             }
 
-            .card {
-                flex: 1 1 calc(50% - 20px); /* Two cards per row */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .math-button {
-                font-size: 0.9rem; /* Adjust font size for smaller screens */
-                padding: 8px 16px; /* Adjust padding */
+            .logo h1 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
             }
 
-            .card {
-                flex: 1 1 100%; /* Single card per row */
+            nav {
+                margin-top: 10px;
             }
 
-            .card h2 {
-                font-size: 1.2rem; /* Smaller heading size for mobile */
+            nav a {
+                margin: 0 10px;
+                padding: 8px;
             }
 
-            .card p {
-                font-size: 0.8rem; /* Smaller paragraph size for mobile */
+            .whatsapp-button {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .whatsapp-button a {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+
+            .whatsapp-button {
+                right: 20px; /* Adjust position for smaller screens */
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Swarup Sir</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="math_game.html" class="math-button">
-                <i class="fas fa-superscript"></i> Math Game
-            </a>
-        </nav>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Swarup Sir</h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="gk_current_affairs.html">GK and Current Affairs</a>
+                <a href="math_game.html">Math Game</a>
+            </nav>
+            <div class="whatsapp-button">
+                <a href="https://wa.me/yourphonenumber" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
     </header>
 
     <main>
-        <section class="card">
+        <section class="card notes">
             <h2>Notes</h2>
             <p>Comprehensive study notes covering key concepts and topics for easier learning.</p>
         </section>
         
-        <section class="card">
+        <section class="card gk">
             <h2><a href="gk_current_affairs.html" style="color: white; text-decoration: none;">GK and Current Affairs</a></h2>
             <p>Stay updated with the latest general knowledge and current events to enhance your awareness.</p>
         </section>
 
-        <section class="card">
+        <section class="card videos">
             <h2>Videos</h2>
             <p>Engaging video content that helps visualize and understand complex subjects effectively.</p>
         </section>
 
-        <section class="card">
+        <section class="card magazine">
             <h2>Magazine of the Month</h2>
             <p>Discover interesting articles and insights in the monthly magazine to expand your knowledge.</p>
         </section>
 
-        <section class="card">
+        <section class="card childcare">
             <h2>Child Care Tips</h2>
             <p>Practical advice for parents on caring for children, promoting healthy development and well-being.</p>
         </section>
 
-        <section class="card">
+        <section class="card spoken-english">
             <h2>Spoken English</h2>
             <p>Improve your spoken English skills with helpful tips, practice exercises, and conversational guides.</p>
         </section>
     </main>
-
-    <a href="contact.html" class="floating-button">
-        <i class="fas fa-comment-dots"></i>
-    </a>
 
     <footer>
         <p>&copy; 2024 Swarup Sir</p>
