@@ -13,133 +13,140 @@
             font-family: 'Roboto', Arial, sans-serif;
             background-color: #f9f9f9;
             color: #333;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .header-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* Header Styles */
+        header {
             background-color: #4285f4; /* Google Blue */
             color: white;
-            padding: 10px 20px;
+            padding: 15px;
+            text-align: center;
+            width: 100%;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: sticky;
+            position: fixed;
             top: 0;
             z-index: 1000;
-        }
-
-        .logo {
-            flex: 1;
-            font-size: 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo h1 {
             margin: 0;
             font-weight: 500;
+            font-size: 1.5rem;
         }
 
         nav {
-            flex: 2;
-            text-align: center;
+            display: flex;
+            align-items: center;
         }
 
         nav a {
             margin: 0 15px;
-            padding: 10px;
             color: white;
-            font-size: 1rem;
+            text-decoration: none;
             transition: all 0.3s ease;
         }
 
         nav a:hover {
-            background-color: #3b78e7; /* Darker shade of Google Blue */
-            border-radius: 5px;
+            color: #3b78e7; /* Darker shade of Google Blue */
         }
 
+        /* Main Content Styles */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            margin-top: 80px; /* Adjusted for header height */
+        }
+
+        .card {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 40px); /* Three cards per row with spacing */
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* WhatsApp Button Styles */
         .whatsapp-button {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .whatsapp-button a {
-            display: flex;
-            align-items: center;
+            position: fixed;
+            bottom: 20px;
+            right: 50px;
             background-color: #25d366; /* WhatsApp green */
             color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 1rem;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
         }
 
-        .whatsapp-button a:hover {
+        .whatsapp-button:hover {
             background-color: #128c7e; /* Darker shade of WhatsApp green */
         }
 
-        /* Floating WhatsApp Button */
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
+        .whatsapp-button i {
+            margin-right: 10px;
         }
 
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            .card {
+                width: calc(50% - 40px); /* Two cards per row */
+            }
+        }
+
         @media (max-width: 768px) {
-            .header-container {
-                flex-wrap: wrap;
-                padding: 10px;
-            }
-
-            .logo, .whatsapp-button {
-                flex-basis: 100%;
-                text-align: center;
-            }
-
-            nav {
-                order: 3;
-                flex-basis: 100%;
-                margin-top: 10px;
-                text-align: center;
-            }
-
-            nav a {
-                display: block;
-                margin: 5px 0;
-                padding: 10px;
+            .card {
+                width: calc(100% - 40px); /* One card per row */
             }
 
             .whatsapp-button {
-                order: 2;
-                margin-top: 10px;
+                bottom: 20px;
+                right: 20px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>Swarup Sir</h1>
-            </div>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="gk_current_affairs.html">GK and Current Affairs</a>
-                <a href="math_game.html">Math Game</a>
-            </nav>
-            <div class="whatsapp-button">
-                <a href="https://wa.me/916294390641" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-            </div>
+        <div class="logo">
+            <h1>Swarup Sir</h1>
         </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="math_game.html">Math Game</a>
+        </nav>
     </header>
 
     <main>
@@ -148,11 +155,6 @@
             <p>Comprehensive study notes covering key concepts and topics for easier learning.</p>
         </section>
         
-        <section class="card gk">
-            <h2><a href="gk_current_affairs.html" style="color: white; text-decoration: none;">GK and Current Affairs</a></h2>
-            <p>Stay updated with the latest general knowledge and current events to enhance your awareness.</p>
-        </section>
-
         <section class="card videos">
             <h2>Videos</h2>
             <p>Engaging video content that helps visualize and understand complex subjects effectively.</p>
@@ -174,15 +176,10 @@
         </section>
     </main>
 
-    <!-- Floating WhatsApp Button -->
-    <div class="floating-whatsapp">
-        <a href="https://wa.me/916294390641" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/916294390641" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
 
-    <footer>
-        <p>&copy; 2024 Swarup Sir</p>
-    </footer>
 </body>
 </html>
