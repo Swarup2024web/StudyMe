@@ -1,186 +1,260 @@
-/* General Styles */
-body {
-    margin: 0;
-    font-family: 'Roboto', Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-/* Header Styles */
-header {
-    background-color: rgba(255, 255, 255, 0.9); /* Transparent white */
-    padding: 15px;
-    text-align: center;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    transition: background-color 0.3s ease; /* Smooth transition */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle black border */
-}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swarup Sir</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
 
-.header-top {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    background: linear-gradient(to right, #4285f4, #34a853, #fbbc05, #ea4335); /* Google colors */
-    -webkit-background-clip: text; /* Clip text to background gradient */
-    -webkit-text-fill-color: transparent; /* Make text transparent */
-    display: inline-block;
-    padding: 5px 10px;
-    border: 2px solid #4285f4; /* Blue border */
-    border-radius: 5px; /* Rounded corners */
-}
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.9); /* Transparent white */
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease; /* Smooth transition */
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle black border */
+        }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0;
-    color: #333; /* Text color */
-}
+        .header-top {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #4285f4, #34a853, #fbbc05, #ea4335); /* Google colors */
+            -webkit-background-clip: text; /* Clip text to background gradient */
+            -webkit-text-fill-color: transparent; /* Make text transparent */
+            display: inline-block;
+            padding: 5px 10px;
+            border: 2px solid #4285f4; /* Blue border */
+            border-radius: 5px; /* Rounded corners */
+        }
 
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+            color: #333; /* Text color */
+        }
 
-nav a {
-    margin: 0 15px;
-    color: #333; /* Text color */
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
 
-nav a:hover {
-    color: #666; /* Darker text color on hover */
-}
+        nav a {
+            margin: 0 15px;
+            color: #333; /* Text color */
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
 
-/* Main Content Styles */
-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
-    margin-top: 80px; /* Adjusted for header height */
-}
+        nav a:hover {
+            color: #666; /* Darker text color on hover */
+        }
 
-.card {
-    background-color: #fff;
-    color: #333;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: calc(50% - 40px); /* Two cards per row with spacing */
-    box-sizing: border-box;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+        /* Main Content Styles */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            margin-top: 80px; /* Adjusted for header height */
+        }
 
-.card h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
+        .card {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 40px); /* Two cards per row with spacing */
+            box-sizing: border-box;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-.card p {
-    font-size: 1rem;
-    margin: 0 0 15px 0;
-}
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
 
-.card a {
-    color: #4285f4; /* Google Blue */
-    text-decoration: none;
-    font-weight: bold;
-}
+        .card p {
+            font-size: 1rem;
+            margin: 0 0 15px 0;
+        }
 
-.card a:hover {
-    text-decoration: underline;
-}
+        .card a {
+            color: #4285f4; /* Google Blue */
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-.card i {
-    margin-right: 10px;
-    font-size: 1.2rem;
-    color: #4285f4; /* Google Blue */
-}
+        .card a:hover {
+            text-decoration: underline;
+        }
 
-/* WhatsApp Button Styles */
-.whatsapp-button {
-    position: fixed;
-    bottom: 50%;
-    right: 20px;
-    background-color: #25d366; /* WhatsApp green */
-    color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transform: translateY(50%);
-}
+        .card i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            color: #4285f4; /* Google Blue */
+        }
 
-.whatsapp-button:hover {
-    background-color: #128c7e; /* Darker shade of WhatsApp green */
-}
+        /* WhatsApp Button Styles */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 50%;
+            right: 20px;
+            background-color: #25d366; /* WhatsApp green */
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transform: translateY(50%);
+        }
 
-.whatsapp-button i {
-    margin-right: 10px;
-    font-size: 1.5rem;
-}
+        .whatsapp-button:hover {
+            background-color: #128c7e; /* Darker shade of WhatsApp green */
+        }
 
-/* Transparent Header on Scroll */
-header.scrolled {
-    background-color: rgba(255, 255, 255, 0.9); /* Transparent white */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+        .whatsapp-button i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    main {
-        padding-top: 120px; /* Adjust for header overlap */
-    }
+        /* Transparent Header on Scroll */
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.9); /* Transparent white */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-    .card {
-        width: calc(50% - 40px); /* Two cards per row */
-    }
-}
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            main {
+                padding-top: 120px; /* Adjust for header overlap */
+            }
 
-@media (max-width: 768px) {
-    main {
-        padding-top: 150px; /* Adjust for header overlap */
-    }
+            .card {
+                width: calc(50% - 40px); /* Two cards per row */
+            }
+        }
 
-    .card {
-        width: calc(100% - 40px); /* One card per row */
-    }
+        @media (max-width: 768px) {
+            main {
+                padding-top: 150px; /* Adjust for header overlap */
+            }
 
-    .whatsapp-button {
-        bottom: 20px;
-        right: 20px;
-        transform: translateY(0);
-    }
-}
+            .card {
+                width: calc(100% - 40px); /* One card per row */
+            }
 
-@media (max-width: 480px) {
-    .card {
-        width: calc(100% - 40px); /* One card per row */
-    }
-}
+            .whatsapp-button {
+                bottom: 20px;
+                right: 20px;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: calc(100% - 40px); /* One card per row */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-top">SWARUP SIR</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="math_game.html" class="math-button">
+                <i class="fas fa-gamepad"></i> Math Game
+            </a>
+            <a href="gk_current_affairs.html">
+                <i class="fas fa-book"></i> GK and Current Affairs
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card notes">
+            <h2><i class="fas fa-sticky-note"></i> Notes</h2>
+            <p>Comprehensive study notes covering key concepts and topics for easier learning.</p>
+        </section>
+
+        <section class="card videos">
+            <h2><i class="fas fa-video"></i> Videos</h2>
+            <p>Engaging video content that helps visualize and understand complex subjects effectively.</p>
+        </section>
+
+        <section class="card magazine">
+            <h2><i class="fas fa-newspaper"></i> Magazine of the Month</h2>
+            <p>Discover interesting articles and insights in the monthly magazine to expand your knowledge.</p>
+        </section>
+
+        <section class="card childcare">
+            <h2><i class="fas fa-baby"></i> Child Care Tips</h2>
+            <p>Practical advice for parents on caring for children, promoting healthy development and well-being.</p>
+        </section>
+
+        <section class="card spoken-english">
+            <h2><i class="fas fa-comment-alt"></i> Spoken English</h2>
+            <p>Improve your spoken English skills with helpful tips, practice exercises, and conversational guides.</p>
+        </section>
+    </main>
+
+    <a href="https://api.whatsapp.com/send?phone=916294390641" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+
+    <script>
+        // Transparent Header on Scroll
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.querySelector("header").classList.add("scrolled");
+            } else {
+                document.querySelector("header").classList.remove("scrolled");
+            }
+        }
+    </script>
+</body>
+
+</html>
